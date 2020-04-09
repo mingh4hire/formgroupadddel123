@@ -1,0 +1,24 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+
+<form [formGroup]='fg'>
+	<div formArrayName="a" *ngFor="let i of fg.get('a').controls; let j = index;">
+		{{j}} is j
+		<div [formGroupName]="j">
+
+			b is <input formControlName="b" />
+      <button *ngIf="fg.get('a').controls.length > 1" (click)="delete(j)">delete j {{j}}</button>
+
+  </div>
+		</div>
+
+</form>
+
+
+
+<button (click)="add()">asd asdf dsfafds</button>
+
+<button (click)="delete()">asd asdf dsfafds</button>
+
